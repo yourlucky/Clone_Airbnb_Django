@@ -17,5 +17,6 @@ class Booking(admin.ModelAdmin):
         "guests",
 
     )
+ 
     list_filter = (
         "kind",)

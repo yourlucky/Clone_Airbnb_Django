@@ -9,6 +9,7 @@ class Review(CommonModel):
 
     experience = models.ForeignKey("experiences.Experience", on_delete=models.CASCADE, null=True, blank=True,related_name="reviews",)
 
+
     payload = models.TextField()
     rating = models.PositiveIntegerField()
 
