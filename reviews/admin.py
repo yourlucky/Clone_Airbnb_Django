@@ -9,13 +9,14 @@ class WordFilter(admin.SimpleListFilter):
         return [
             ("good","Good"),
             ("greate","Great"),
-            ("awesom","Awesome"),
+            ("awesome","Awesome"),
         ]
-    def queryset(self,request,reviews):
+    def queryset(self, request, reviews):
         word = self.value()
-        return reviews.filter(payload__contains=word)
-
-
+        if word:
+            return reviews.filter(payload__contains=word)
+        else:
+            reviews
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
